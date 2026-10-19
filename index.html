@@ -15,7 +15,7 @@
 <title>Zamia 2</title>
 <style>
 :root{--navy:#10283f;--teal:#087f78;--teal2:#11a39a;--amber:#efb449;--bg:#f5f7f6;--card:#fff;--muted:#657583;--line:#e3e9e8;--danger:#b74343;--shadow:0 8px 28px rgba(16,40,63,.08)}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--navy);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.4}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{max-width:520px;min-height:100dvh;margin:auto;background:var(--bg);padding-bottom:92px}.topbar{position:sticky;top:0;z-index:5;background:rgba(245,247,246,.96);backdrop-filter:blur(10px);padding:16px 18px 12px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}.brand{font-size:21px;font-weight:800;letter-spacing:-.4px}.brand small{display:block;font-size:12px;color:var(--muted);font-weight:500;letter-spacing:0}.privacy-dot{font-size:11px;color:var(--teal);background:#e4f4f1;padding:7px 10px;border-radius:99px;font-weight:700}.content{padding:18px}.screen{display:none}.screen.active{display:block}.screen-title{margin:2px 0 16px;font-size:23px;letter-spacing:-.4px}.intro{margin:-9px 0 18px;color:var(--muted);font-size:14px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;margin:12px 0;box-shadow:var(--shadow)}.voice{width:100%;border:0;border-radius:20px;background:linear-gradient(135deg,var(--teal),var(--teal2));color:#fff;padding:18px 16px;font-weight:800;font-size:17px;box-shadow:0 10px 24px rgba(8,127,120,.2)}.voice span{display:block;font-size:12px;font-weight:500;opacity:.9;margin-top:3px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}.action{min-height:90px;text-align:left;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;color:var(--navy);font-weight:750;box-shadow:var(--shadow)}.action .ico{display:block;font-size:22px;margin-bottom:7px}.section-head{display:flex;justify-content:space-between;align-items:center;margin:22px 0 8px}.section-head h3{margin:0;font-size:17px}.text-button{background:none;border:0;color:var(--teal);font-weight:750;padding:8px}.empty{color:var(--muted);text-align:center;padding:22px 12px;font-size:14px}.client-card{display:flex;align-items:flex-start;gap:12px}.avatar{flex:0 0 42px;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#e2f2ef;color:var(--teal);font-weight:800}.client-main{min-width:0;flex:1}.client-name{font-weight:800;overflow-wrap:anywhere}.sub{color:var(--muted);font-size:13px;margin-top:3px;overflow-wrap:anywhere}.badge{display:inline-block;border-radius:99px;background:#eef3f2;color:#415564;font-size:11px;font-weight:750;padding:5px 9px;margin-top:8px}.badge.sent,.badge.follow{background:#e4f4f1;color:#08766f}.badge.visit{background:#fff2d9;color:#885b10}.badge.won{background:#e7f4e7;color:#31723e}.badge.lost{background:#fce9e8;color:#9c3d3d}.card-actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}.btn{border:0;border-radius:12px;padding:11px 14px;background:var(--teal);color:white;font-weight:750}.btn.secondary{background:#e9f2f1;color:var(--teal)}.btn.ghost{background:#f1f4f4;color:var(--navy)}.btn.danger{background:#fff0ef;color:var(--danger)}.btn.full{width:100%;margin-top:8px}.form label{display:block;font-size:13px;font-weight:750;margin:13px 0 6px}.form input,.form select,.form textarea,.search{width:100%;border:1px solid #d7e0df;border-radius:12px;padding:12px 13px;background:white;color:var(--navy);outline:none}.form input:focus,.form select:focus,.form textarea:focus,.search:focus{border-color:var(--teal);box-shadow:0 0 0 3px #d8f1ed}.form textarea{min-height:90px;resize:vertical}.hint{font-size:12px;color:var(--muted);margin:12px 2px}.reminder-date{font-size:12px;font-weight:800;color:var(--teal);letter-spacing:.2px}.detail-label{font-size:11px;text-transform:uppercase;letter-spacing:.7px;color:var(--muted);font-weight:800;margin-top:15px}.detail-value{font-size:15px;font-weight:650;margin-top:3px;overflow-wrap:anywhere}.privacy-card{background:#eaf5f2;border-color:#d3ebe6;color:#255e59;font-size:13px}.bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(520px,100%);padding:8px max(10px,env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom)) max(10px,env(safe-area-inset-left));display:grid;grid-template-columns:repeat(4,1fr);background:rgba(255,255,255,.97);border-top:1px solid var(--line);z-index:6;backdrop-filter:blur(10px)}.nav-btn{background:none;border:0;color:#74828c;font-size:11px;padding:5px 2px;border-radius:12px}.nav-btn b{display:block;font-size:19px;line-height:1.2;margin-bottom:2px}.nav-btn.active{color:var(--teal);font-weight:800}.modal-backdrop{position:fixed;inset:0;background:rgba(12,28,42,.42);z-index:10;display:none;align-items:flex-end;justify-content:center}.modal-backdrop.show{display:flex}.modal{width:min(520px,100%);background:#fff;border-radius:22px 22px 0 0;padding:22px 20px calc(22px + env(safe-area-inset-bottom));box-shadow:0 -12px 40px rgba(0,0,0,.16)}.modal h2{margin:0 0 8px}.modal p{color:var(--muted)}.modal .close{float:right;border:0;border-radius:50%;width:36px;height:36px;background:#f1f4f4;font-size:18px}.small{font-size:12px;color:var(--muted)}.hidden{display:none!important}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--navy);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.4}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{max-width:520px;min-height:100dvh;margin:auto;background:var(--bg);padding-bottom:92px}.topbar{position:sticky;top:0;z-index:5;background:rgba(245,247,246,.96);backdrop-filter:blur(10px);padding:16px 18px 12px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}.brand{font-size:21px;font-weight:800;letter-spacing:-.4px}.brand small{display:block;font-size:12px;color:var(--muted);font-weight:500;letter-spacing:0}.privacy-dot{font-size:11px;color:var(--teal);background:#e4f4f1;padding:7px 10px;border-radius:99px;font-weight:700}.content{padding:18px}.screen{display:none}.screen.active{display:block}.screen-title{margin:2px 0 16px;font-size:23px;letter-spacing:-.4px}.intro{margin:-9px 0 18px;color:var(--muted);font-size:14px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;margin:12px 0;box-shadow:var(--shadow)}.voice{width:100%;border:0;border-radius:20px;background:linear-gradient(135deg,var(--teal),var(--teal2));color:#fff;padding:18px 16px;font-weight:800;font-size:17px;box-shadow:0 10px 24px rgba(8,127,120,.2)}.voice span{display:block;font-size:12px;font-weight:500;opacity:.9;margin-top:3px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}.action{min-height:90px;text-align:left;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;color:var(--navy);font-weight:750;box-shadow:var(--shadow)}.action .ico{display:block;font-size:22px;margin-bottom:7px}.section-head{display:flex;justify-content:space-between;align-items:center;margin:22px 0 8px}.section-head h3{margin:0;font-size:17px}.text-button{background:none;border:0;color:var(--teal);font-weight:750;padding:8px}.empty{color:var(--muted);text-align:center;padding:22px 12px;font-size:14px}.client-card{display:flex;align-items:flex-start;gap:12px}.avatar{flex:0 0 42px;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#e2f2ef;color:var(--teal);font-weight:800}.client-main{min-width:0;flex:1}.client-name{font-weight:800;overflow-wrap:anywhere}.sub{color:var(--muted);font-size:13px;margin-top:3px;overflow-wrap:anywhere}.badge{display:inline-block;border-radius:99px;background:#eef3f2;color:#415564;font-size:11px;font-weight:750;padding:5px 9px;margin-top:8px}.badge.sent,.badge.follow{background:#e4f4f1;color:#08766f}.badge.visit{background:#fff2d9;color:#885b10}.badge.won{background:#e7f4e7;color:#31723e}.badge.lost{background:#fce9e8;color:#9c3d3d}.card-actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}.btn{border:0;border-radius:12px;padding:11px 14px;background:var(--teal);color:white;font-weight:750}.btn.secondary{background:#e9f2f1;color:var(--teal)}.btn.ghost{background:#f1f4f4;color:var(--navy)}.btn.danger{background:#fff0ef;color:var(--danger)}.btn.full{width:100%;margin-top:8px}.form label{display:block;font-size:13px;font-weight:750;margin:13px 0 6px}.form input,.form select,.form textarea,.search{width:100%;border:1px solid #d7e0df;border-radius:12px;padding:12px 13px;background:white;color:var(--navy);outline:none}.form input:focus,.form select:focus,.form textarea:focus,.search:focus{border-color:var(--teal);box-shadow:0 0 0 3px #d8f1ed}.form textarea{min-height:90px;resize:vertical}.hint{font-size:12px;color:var(--muted);margin:12px 2px}.reminder-date{font-size:12px;font-weight:800;color:var(--teal);letter-spacing:.2px}.detail-label{font-size:11px;text-transform:uppercase;letter-spacing:.7px;color:var(--muted);font-weight:800;margin-top:15px}.detail-value{font-size:15px;font-weight:650;margin-top:3px;overflow-wrap:anywhere}.privacy-card{background:#eaf5f2;border-color:#d3ebe6;color:#255e59;font-size:13px}.bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(520px,100%);padding:8px max(10px,env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom)) max(10px,env(safe-area-inset-left));display:grid;grid-template-columns:repeat(4,1fr);background:rgba(255,255,255,.97);border-top:1px solid var(--line);z-index:6;backdrop-filter:blur(10px)}.nav-btn{background:none;border:0;color:#74828c;font-size:11px;padding:5px 2px;border-radius:12px}.nav-btn b{display:block;font-size:19px;line-height:1.2;margin-bottom:2px}.nav-btn.active{color:var(--teal);font-weight:800}.modal-backdrop{position:fixed;inset:0;background:rgba(12,28,42,.42);z-index:10;display:none;align-items:flex-end;justify-content:center}.modal-backdrop.show{display:flex}.modal{width:min(520px,100%);background:#fff;border-radius:22px 22px 0 0;padding:22px 20px calc(22px + env(safe-area-inset-bottom));box-shadow:0 -12px 40px rgba(0,0,0,.16)}.modal h2{margin:0 0 8px}.modal p{color:var(--muted)}.modal .close{float:right;border:0;border-radius:50%;width:36px;height:36px;background:#f1f4f4;font-size:18px}.small{font-size:12px;color:var(--muted)}.voice-transcript{width:100%;min-height:110px;border:1px solid #d7e0df;border-radius:12px;padding:12px;background:white;color:var(--navy);margin-top:8px}.hidden{display:none!important}
 </style>
 </head>
 <body>
@@ -25,7 +25,7 @@
 <section class="screen active" id="screen-home">
 <h1 class="screen-title">Inicio</h1><p class="intro">Organiza clientes y próximos pasos sin perder el hilo.</p>
 <div class="card" id="install-card"><strong>Instala Zamia 2</strong><p class="small" id="install-status">Puedes añadirla a la pantalla de inicio para abrirla como app.</p><button class="btn secondary full" id="install-btn" type="button">Instalar app</button></div>
-<button class="voice" type="button" data-action="voice">🎙 Hablar con Zamia<span>Comprobaremos si tu moto g24 reconoce voz localmente</span></button>
+<button class="voice" type="button" data-action="voice">🎙 Hablar con Zamia<span>Dicta una orden; revisa la ficha antes de guardarla</span></button>
 <div class="grid">
 <button class="action" type="button" data-action="new"><span class="ico">＋</span>Agregar cliente</button>
 <button class="action" type="button" data-screen="clients"><span class="ico">👥</span>Ver clientes</button>
@@ -34,7 +34,7 @@
 </div>
 <div class="section-head"><h3>Próximos seguimientos</h3><button class="text-button" data-screen="agenda">Ver agenda</button></div>
 <div id="home-followups"></div>
-<div class="card privacy-card">Tus nombres, teléfonos y notas quedan guardados en este dispositivo. No se suben a la nube.</div>
+<div class="card privacy-card">Tus datos guardados quedan en este dispositivo. Si usas Hablar con Zamia, el audio se envía al servicio de reconocimiento del navegador para transcribirlo; Zamia no conserva el audio.</div>
 </section>
 <section class="screen" id="screen-clients">
 <h1 class="screen-title">Clientes</h1><p class="intro">Tus contactos y trabajos, guardados aquí.</p>
@@ -59,7 +59,7 @@
 <label for="notes">Nota</label><textarea id="notes" name="notes" maxlength="2000" placeholder="Detalle importante (opcional)"></textarea>
 <button class="btn full" type="submit">Guardar cliente</button>
 <button class="btn ghost full" type="button" data-screen="clients">Cancelar</button>
-</form><p class="hint">Los datos siempre se revisan antes de guardarse. Recuerda exportar una copia de seguridad si cambias de teléfono.</p>
+</form><p class="hint hidden" id="voice-prefill-note" role="status"></p><p class="hint">Los datos siempre se revisan antes de guardarse. Recuerda exportar una copia de seguridad si cambias de teléfono.</p>
 </section>
 <section class="screen" id="screen-detail">
 <button class="text-button" data-screen="clients">← Volver a clientes</button>
@@ -73,14 +73,14 @@
 <h1 class="screen-title">Más</h1><p class="intro">Privacidad y respaldo de tus datos.</p>
 <div class="card privacy-card"><strong>Almacenamiento local</strong><br>La información se guarda en el navegador de este dispositivo. No se envía a ROCAS ni a un servidor.</div>
 <div class="card"><h3>Respaldo</h3><p class="small">Descarga una copia de tus clientes para conservarla o pasarla a otro teléfono.</p><button class="btn full" id="export-btn">Descargar respaldo</button><button class="btn secondary full" id="import-btn">Restaurar respaldo</button><input type="file" id="import-file" accept="application/json,.json" class="hidden"></div>
-<div class="card"><h3>Sobre Zamia 2</h3><p class="small">Clientes, estados y seguimientos se guardan en este dispositivo. La prueba de voz busca reconocimiento local; no cambia a uno en línea. La Agenda no envía notificaciones automáticas y Zamia no contesta llamadas.</p></div>
+<div class="card"><h3>Sobre Zamia 2</h3><p class="small">Clientes, estados y seguimientos se guardan en este dispositivo. Si usas el micrófono de Zamia, el audio se procesa en línea para transcribirlo y Zamia no lo conserva; solo guarda la ficha cuando confirmas. La Agenda no envía notificaciones automáticas y Zamia no contesta llamadas.</p></div>
 </section>
 </main>
 <nav class="bottom-nav" aria-label="Navegación principal">
 <button class="nav-btn active" data-screen="home"><b>⌂</b>Inicio</button><button class="nav-btn" data-screen="clients"><b>♙</b>Clientes</button><button class="nav-btn" data-screen="agenda"><b>▦</b>Agenda</button><button class="nav-btn" data-screen="more"><b>⋯</b>Más</button>
 </nav>
 </div>
-<div class="modal-backdrop" id="voice-modal" role="dialog" aria-modal="true" aria-labelledby="voice-title"><div class="modal"><button class="close" data-close="voice-modal" aria-label="Cerrar">×</button><h2 id="voice-title">Hablar con Zamia</h2><p>Primero comprobaremos si Chrome puede reconocer español directamente en este dispositivo. Esta comprobación no activa el micrófono ni descarga nada.</p><button class="btn full" id="check-local-voice" type="button">Comprobar voz local</button><div class="card hidden" id="voice-test-panel"><p class="small" id="voice-status" role="status" aria-live="polite"></p><button class="btn full hidden" id="install-voice-pack" type="button">Descargar modelo de español en el dispositivo</button><button class="btn secondary full hidden" id="start-local-voice" type="button">Probar micrófono local</button><button class="btn danger full hidden" id="stop-local-voice" type="button">Detener escucha</button></div><p class="small">Si el modo local no está disponible, Zamia no usará reconocimiento en línea. La prueba no se guardará.</p></div></div>
+<div class="modal-backdrop" id="voice-modal" role="dialog" aria-modal="true" aria-labelledby="voice-title"><div class="modal"><button class="close" data-close="voice-modal" aria-label="Cerrar">×</button><h2 id="voice-title">Hablar con Zamia</h2><p>Al tocar <strong>Iniciar escucha</strong>, el audio se enviará al servicio de reconocimiento del navegador para transcribirlo; requiere internet. Zamia no guarda audio. Solo prepara un borrador y no guarda clientes hasta que revises y pulses Guardar.</p><p class="small">Di algo como: “Cliente Ana López, celular 3001234567, obra remodelación de cocina, seguimiento mañana, nota llamar después de las cuatro”.</p><button class="btn full" id="start-voice" type="button">Iniciar escucha</button><button class="btn danger full hidden" id="stop-voice" type="button">Detener escucha</button><p class="small" id="voice-status" role="status" aria-live="polite">El micrófono solo se activa cuando tú tocas el botón.</p><label class="small hidden" id="voice-transcript-label" for="voice-transcript">Texto reconocido; revísalo o corrígelo</label><textarea class="voice-transcript hidden" id="voice-transcript" maxlength="2000"></textarea><button class="btn secondary full hidden" id="prepare-voice" type="button">Preparar ficha para revisar</button></div></div>
 <script>
 'use strict';
 const KEY='zamia2.clients.v1';let clients=loadClients();let editingId=null;let selectedId=null;let activeScreen='home';
@@ -99,89 +99,89 @@ function renderHome(){const target=document.getElementById('home-followups'),ite
 function renderClients(){const q=(document.getElementById('client-search')?.value||'').trim().toLocaleLowerCase('es');const list=clients.filter(c=>`${c.name} ${c.project} ${c.status}`.toLocaleLowerCase('es').includes(q)).sort((a,b)=>a.name.localeCompare(b.name,'es'));document.getElementById('clients-count').textContent=`${clients.length} ${clients.length===1?'cliente':'clientes'}`;document.getElementById('client-list').innerHTML=list.length?list.map(c=>renderClientCard(c,true)).join(''):'<div class="card empty">No hay clientes guardados todavía.<br>Usa “Agregar” para registrar el primero.</div>'}
 function renderAgenda(){const items=sortedFollowups();document.getElementById('agenda-list').innerHTML=items.length?items.map(c=>`<article class="card client-card"><div class="avatar">▦</div><div class="client-main"><div class="reminder-date">${esc(dateLabel(c.followUp))}</div><button class="text-button client-name" data-detail="${esc(c.id)}">${esc(c.status==='Visita pendiente'?'Visita de obra':'Seguimiento')}</button><div class="sub">${esc(c.name)}${c.project?' · '+esc(c.project):''}</div>${c.phone?`<div class="card-actions"><button class="btn secondary" data-detail="${esc(c.id)}">Ver ficha</button><button class="btn ghost" data-call="${esc(c.id)}">Llamar</button></div>`:`<div class="card-actions"><button class="btn secondary" data-detail="${esc(c.id)}">Ver ficha</button></div>`}</div></article>`).join(''):'<div class="card empty">No hay seguimientos con fecha.<br>Agrega un cliente y elige cuándo retomarlo.</div>'}
 function showScreen(name){document.querySelectorAll('.screen').forEach(x=>x.classList.toggle('active',x.id==='screen-'+name));document.querySelectorAll('.nav-btn').forEach(x=>x.classList.toggle('active',x.dataset.screen===name));activeScreen=name;window.scrollTo({top:0,behavior:'smooth'});render()}
-function newClient(){editingId=null;document.getElementById('client-form').reset();document.getElementById('form-title').textContent='Agregar cliente';showScreen('form')}
+function newClient(){editingId=null;const note=document.getElementById('voice-prefill-note');note.classList.add('hidden');note.textContent='';document.getElementById('client-form').reset();document.getElementById('form-title').textContent='Agregar cliente';showScreen('form')}
 function editClient(id){const c=clients.find(x=>x.id===id);if(!c)return;editingId=id;const f=document.getElementById('client-form');for(const k of ['name','phone','project','status','followUp','notes'])f.elements[k].value=c[k]||'';document.getElementById('form-title').textContent='Editar cliente';showScreen('form')}
 function openDetail(id){selectedId=id;showScreen('detail')}
 function renderDetail(){const c=clients.find(x=>x.id===selectedId);if(!c){showScreen('clients');return}document.getElementById('detail-name').textContent=c.name;document.getElementById('detail-project').textContent=c.project||'Sin obra o servicio';document.getElementById('detail-card').innerHTML=`<span class="badge ${badgeClass(c.status)}">${esc(c.status||'Nuevo contacto')}</span><div class="detail-label">Celular</div><div class="detail-value">${esc(c.phone||'No registrado')}</div><div class="detail-label">Obra o servicio</div><div class="detail-value">${esc(c.project||'No registrado')}</div><div class="detail-label">Próxima acción</div><div class="detail-value">${esc(c.status==='Visita pendiente'?'Visita de obra':'Seguimiento')}</div><div class="detail-label">Fecha</div><div class="detail-value">${esc(fmtDate(c.followUp))}</div><div class="detail-label">Nota</div><div class="detail-value">${esc(c.notes||'Sin notas')}</div>`;const call=document.getElementById('call-link');if(c.phone){call.classList.remove('hidden');call.onclick=e=>{e.preventDefault();if(confirm(`¿Abrir el teléfono para llamar a ${c.name}?`))location.href='tel:'+encodeURIComponent(c.phone)}}else{call.classList.add('hidden');call.onclick=null}document.getElementById('detail-edit').onclick=()=>editClient(c.id);document.getElementById('detail-delete').onclick=()=>deleteClient(c.id);document.getElementById('detail-agenda').onclick=()=>showScreen('agenda')}
 function deleteClient(id){const c=clients.find(x=>x.id===id);if(!c||!confirm(`¿Eliminar a ${c.name} de este dispositivo? Esta acción no se puede deshacer.`))return;clients=clients.filter(x=>x.id!==id);persist();selectedId=null;showScreen('clients')}
 document.getElementById('client-form').addEventListener('submit',e=>{e.preventDefault();const f=e.currentTarget;const data={name:f.elements.name.value.trim(),phone:f.elements.phone.value.trim(),project:f.elements.project.value.trim(),status:f.elements.status.value,followUp:f.elements.followUp.value,notes:f.elements.notes.value.trim()};if(!data.name){alert('Escribe el nombre del cliente.');return}if(editingId){const i=clients.findIndex(c=>c.id===editingId);if(i>=0)clients[i]={...clients[i],...data,updatedAt:new Date().toISOString()}}else{const id=(crypto.randomUUID?crypto.randomUUID():String(Date.now())+'-'+Math.random().toString(36).slice(2));clients.unshift({id,...data,createdAt:new Date().toISOString(),updatedAt:new Date().toISOString()})}if(!persist())return;f.reset();editingId=null;showScreen('clients');alert('Cliente guardado en este dispositivo.')});
-const voicePanel=document.getElementById('voice-test-panel');
 const voiceStatus=document.getElementById('voice-status');
-const installVoicePackButton=document.getElementById('install-voice-pack');
-const startLocalVoiceButton=document.getElementById('start-local-voice');
-const stopLocalVoiceButton=document.getElementById('stop-local-voice');
-let LocalSpeechRecognition=null;
-let activeLocalRecognition=null;
+const voiceTranscript=document.getElementById('voice-transcript');
+const voiceTranscriptLabel=document.getElementById('voice-transcript-label');
+const startVoiceButton=document.getElementById('start-voice');
+const stopVoiceButton=document.getElementById('stop-voice');
+const prepareVoiceButton=document.getElementById('prepare-voice');
+let activeRecognition=null;
 function setVoiceStatus(message){voiceStatus.textContent=message}
-document.getElementById('check-local-voice').addEventListener('click',async()=>{
-  voicePanel.classList.remove('hidden');
-  installVoicePackButton.classList.add('hidden');
-  startLocalVoiceButton.classList.add('hidden');
-  stopLocalVoiceButton.classList.add('hidden');
-  setVoiceStatus('Comprobando si este navegador tiene reconocimiento local en español…');
+function parseVoiceCapture(raw){
+  const fields={name:'',phone:'',project:'',followRaw:'',notes:'',status:''};
+  const markers=[...raw.matchAll(/(?:^|[,;.!?]\s*|\s+)(cliente|nombre|celular|tel[eé]fono|obra|servicio|seguimiento|fecha|nota|estado)\s*[:,-]?\s*/gi)];
+  for(let i=0;i<markers.length;i++){
+    const marker=markers[i],label=marker[1].normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+    const start=marker.index+marker[0].length,end=i+1<markers.length?markers[i+1].index:raw.length;
+    const value=raw.slice(start,end).replace(/^[\s,:;.-]+|[\s,:;.-]+$/g,'');
+    if(!value)continue;
+    if((label==='cliente'||label==='nombre')&&!fields.name)fields.name=value;
+    else if((label==='celular'||label==='telefono')&&!fields.phone)fields.phone=value;
+    else if((label==='obra'||label==='servicio')&&!fields.project)fields.project=value;
+    else if((label==='seguimiento'||label==='fecha')&&!fields.followRaw)fields.followRaw=value;
+    else if(label==='nota'&&!fields.notes)fields.notes=value;
+    else if(label==='estado'&&!fields.status)fields.status=value;
+  }
+  if(!markers.length)fields.notes=raw.trim();
+  return fields;
+}
+function parseVoiceDate(raw){
+  if(!raw)return'';
+  const text=raw.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
+  const date=new Date();date.setHours(0,0,0,0);
+  if(/\bpasado manana\b/.test(text)){date.setDate(date.getDate()+2);return localDateValue(date)}
+  if(/\bmanana\b/.test(text)){date.setDate(date.getDate()+1);return localDateValue(date)}
+  if(/\bhoy\b/.test(text))return localDateValue(date);
+  const weekdays=['domingo','lunes','martes','miercoles','jueves','viernes','sabado'];
+  const weekday=weekdays.findIndex(day=>new RegExp(`\\b${day}\\b`).test(text));
+  if(weekday>=0){let days=(weekday-date.getDay()+7)%7;if(days===0)days=7;date.setDate(date.getDate()+days);return localDateValue(date)}
+  const months=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+  let day,month,year;
+  let match=text.match(/\b(\d{1,2})[\/-](\d{1,2})(?:[\/-](\d{4}))?\b/);
+  if(match){day=Number(match[1]);month=Number(match[2])-1;year=match[3]?Number(match[3]):date.getFullYear()}
+  else{match=text.match(new RegExp(`\\b(\\d{1,2})\\s+(?:de\\s+)?(${months.join('|')})(?:\\s+(?:de\\s+)?(\\d{4}))?\\b`));if(!match)return'';day=Number(match[1]);month=months.indexOf(match[2]);year=match[3]?Number(match[3]):date.getFullYear()}
+  let candidate=new Date(year,month,day);if(candidate.getFullYear()!==year||candidate.getMonth()!==month||candidate.getDate()!==day)return'';
+  candidate.setHours(0,0,0,0);if(!match[3]&&candidate<date){year++;candidate=new Date(year,month,day);candidate.setHours(0,0,0,0)}
+  return localDateValue(candidate);
+}
+function localDateValue(date){return`${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`}
+startVoiceButton.addEventListener('click',()=>{
   const Recognition=window.SpeechRecognition||window.webkitSpeechRecognition;
-  if(!Recognition){setVoiceStatus('Este navegador no ofrece reconocimiento de voz local. No se activó el micrófono ni se usó un servicio en línea.');return}
-  if(typeof Recognition.available!=='function'||typeof Recognition.install!=='function'){setVoiceStatus('Chrome no permite comprobar el modo local en este dispositivo. No activé el micrófono ni usaré reconocimiento en línea.');return}
-  LocalSpeechRecognition=Recognition;
+  if(!Recognition){setVoiceStatus('Este navegador no admite el micrófono de Zamia. No se inició ninguna grabación.');return}
+  if(activeRecognition)activeRecognition.abort();
+  voiceTranscript.value='';voiceTranscript.classList.add('hidden');voiceTranscriptLabel.classList.add('hidden');prepareVoiceButton.classList.add('hidden');
   try{
-    const availability=await Recognition.available({langs:['es-CO'],processLocally:true,quality:'command'});
-    if(availability==='available'){
-      setVoiceStatus('El reconocimiento local en español está disponible. Todavía no se ha activado el micrófono.');
-      startLocalVoiceButton.classList.remove('hidden');
-    }else if(availability==='downloadable'){
-      setVoiceStatus('El modo local está disponible, pero falta el modelo de español. No descargué nada.');
-      installVoicePackButton.classList.remove('hidden');
-    }else{
-      setVoiceStatus('Este dispositivo no ofrece reconocimiento local en español. No se activó el micrófono ni se usó reconocimiento en línea.');
-    }
-  }catch{
-    setVoiceStatus('No pude verificar la opción local en este navegador. No activé el micrófono ni cambié a reconocimiento en línea.');
-  }
-});
-installVoicePackButton.addEventListener('click',async()=>{
-  if(!LocalSpeechRecognition)return;
-  if(!confirm('¿Descargar el modelo de voz en español para usarlo localmente? Puede consumir datos móviles; aún no se activará el micrófono.'))return;
-  setVoiceStatus('Descargando el modelo local de español…');
-  installVoicePackButton.classList.add('hidden');
-  try{
-    const installed=await LocalSpeechRecognition.install({langs:['es-CO'],processLocally:true,quality:'command'});
-    if(installed){setVoiceStatus('Modelo instalado. Toca “Comprobar voz local” para verificarlo antes de usar el micrófono.');}
-    else{setVoiceStatus('No se pudo instalar el modelo. No se activó el micrófono.');}
-  }catch{
-    setVoiceStatus('No se pudo descargar el modelo local. No se activó el micrófono.');
-  }
-});
-startLocalVoiceButton.addEventListener('click',()=>{
-  if(!LocalSpeechRecognition)return;
-  try{
-    const recognition=new LocalSpeechRecognition();
-    activeLocalRecognition=recognition;
-    recognition.lang='es-CO';
-    recognition.processLocally=true;
-    recognition.continuous=false;
-    recognition.interimResults=false;
-    startLocalVoiceButton.classList.add('hidden');
-    stopLocalVoiceButton.classList.remove('hidden');
-    recognition.onstart=()=>setVoiceStatus('Zamia escucha localmente. Di “prueba Zamia”; no se guardará nada.');
-    recognition.onresult=event=>{const transcript=event.results?.[0]?.[0]?.transcript||'';setVoiceStatus(transcript?`Zamia reconoció: “${transcript}”. Solo fue una prueba; no se guardó.`:'No se recibió texto; no se guardó nada.');};
-    recognition.onerror=event=>{setVoiceStatus(event.error==='not-allowed'?'No se autorizó el micrófono. No se guardó nada.':'No se pudo completar la prueba local. Zamia no cambiará a reconocimiento en línea.');};
-    recognition.onend=()=>{activeLocalRecognition=null;stopLocalVoiceButton.classList.add('hidden');startLocalVoiceButton.classList.remove('hidden');};
+    const recognition=new Recognition();activeRecognition=recognition;
+    recognition.lang='es-CO';recognition.continuous=false;recognition.interimResults=false;recognition.maxAlternatives=1;
+    if('processLocally'in recognition)recognition.processLocally=false;
+    let received=false;
+    startVoiceButton.classList.add('hidden');stopVoiceButton.classList.remove('hidden');
+    setVoiceStatus('Pidiendo permiso al micrófono. Di la orden en una frase cuando empiece a escuchar.');
+    recognition.onstart=()=>setVoiceStatus('Te escucho. Di, por ejemplo: “Cliente Ana López, celular 3001234567, obra remodelación de cocina, seguimiento mañana”.');
+    recognition.onresult=event=>{const text=Array.from(event.results).map(result=>result[0]?.transcript||'').join(' ').trim();if(text){received=true;voiceTranscript.value=text;voiceTranscript.classList.remove('hidden');voiceTranscriptLabel.classList.remove('hidden');prepareVoiceButton.classList.remove('hidden');setVoiceStatus('Revisa o corrige el texto antes de preparar la ficha. Todavía no se guardó nada.')}};
+    recognition.onerror=event=>{setVoiceStatus(event.error==='not-allowed'?'No se autorizó el micrófono. No se guardó nada.':'No se pudo transcribir la voz. Revisa la conexión e inténtalo de nuevo; no se guardó nada.');};
+    recognition.onend=()=>{activeRecognition=null;stopVoiceButton.classList.add('hidden');startVoiceButton.classList.remove('hidden');if(!received&&voiceStatus.textContent.startsWith('Te escucho'))setVoiceStatus('No recibí una frase. Puedes tocar Iniciar escucha para intentarlo otra vez.');};
     recognition.start();
-  }catch{
-    activeLocalRecognition=null;
-    stopLocalVoiceButton.classList.add('hidden');
-    startLocalVoiceButton.classList.remove('hidden');
-    setVoiceStatus('No se pudo iniciar la prueba local. No se guardó nada ni se usó reconocimiento en línea.');
-  }
+  }catch{activeRecognition=null;stopVoiceButton.classList.add('hidden');startVoiceButton.classList.remove('hidden');setVoiceStatus('No se pudo iniciar el micrófono en este navegador. No se guardó nada.');}
 });
-stopLocalVoiceButton.addEventListener('click',()=>{
-  if(activeLocalRecognition)activeLocalRecognition.abort();
-  activeLocalRecognition=null;
-  stopLocalVoiceButton.classList.add('hidden');
-  startLocalVoiceButton.classList.remove('hidden');
-  setVoiceStatus('Prueba detenida. No se guardó nada.');
+stopVoiceButton.addEventListener('click',()=>{if(activeRecognition)activeRecognition.abort();activeRecognition=null;stopVoiceButton.classList.add('hidden');startVoiceButton.classList.remove('hidden');setVoiceStatus('Escucha detenida. El texto reconocido, si lo había, no se ha guardado.');});
+prepareVoiceButton.addEventListener('click',()=>{
+  const raw=voiceTranscript.value.trim();if(!raw){setVoiceStatus('No hay texto para preparar.');return}
+  const fields=parseVoiceCapture(raw),followDate=parseVoiceDate(fields.followRaw),formNote=document.getElementById('voice-prefill-note');
+  formNote.classList.add('hidden');formNote.textContent='';newClient();
+  const form=document.getElementById('client-form').elements;
+  form.name.value=fields.name;form.phone.value=fields.phone;form.project.value=fields.project;form.notes.value=fields.notes;form.followUp.value=followDate;
+  const statusOption=Array.from(form.status.options).find(option=>option.value.toLocaleLowerCase('es')===fields.status.toLocaleLowerCase('es'));if(statusOption)form.status.value=statusOption.value;
+  const reminders=[];if(!fields.name)reminders.push('No identifiqué el nombre: complétalo.');if(fields.followRaw&&!followDate)reminders.push(`No pude convertir “${fields.followRaw}” en una fecha; selecciónala en el calendario.`);reminders.push('Revisa y corrige todos los datos. Aún no se ha guardado nada.');
+  formNote.textContent=reminders.join(' ');formNote.classList.remove('hidden');document.getElementById('voice-modal').classList.remove('show');
 });
-document.addEventListener('click',e=>{const s=e.target.closest('[data-screen]');if(s){showScreen(s.dataset.screen);return}const a=e.target.closest('[data-action]');if(a){if(a.dataset.action==='new'){document.getElementById('voice-modal').classList.remove('show');newClient()}if(a.dataset.action==='voice')document.getElementById('voice-modal').classList.add('show');return}const d=e.target.closest('[data-detail]');if(d){openDetail(d.dataset.detail);return}const call=e.target.closest('[data-call]');if(call){const c=clients.find(x=>x.id===call.dataset.call);if(c?.phone&&confirm(`¿Abrir el teléfono para llamar a ${c.name}?`))location.href='tel:'+encodeURIComponent(c.phone);return}const close=e.target.closest('[data-close]');if(close){if(close.dataset.close==='voice-modal'&&activeLocalRecognition){activeLocalRecognition.abort();activeLocalRecognition=null;stopLocalVoiceButton.classList.add('hidden');startLocalVoiceButton.classList.remove('hidden')}document.getElementById(close.dataset.close).classList.remove('show')}});
+document.addEventListener('click',e=>{const s=e.target.closest('[data-screen]');if(s){showScreen(s.dataset.screen);return}const a=e.target.closest('[data-action]');if(a){if(a.dataset.action==='new'){document.getElementById('voice-modal').classList.remove('show');newClient()}if(a.dataset.action==='voice')document.getElementById('voice-modal').classList.add('show');return}const d=e.target.closest('[data-detail]');if(d){openDetail(d.dataset.detail);return}const call=e.target.closest('[data-call]');if(call){const c=clients.find(x=>x.id===call.dataset.call);if(c?.phone&&confirm(`¿Abrir el teléfono para llamar a ${c.name}?`))location.href='tel:'+encodeURIComponent(c.phone);return}const close=e.target.closest('[data-close]');if(close){if(close.dataset.close==='voice-modal'&&activeRecognition){activeRecognition.abort();activeRecognition=null;stopVoiceButton.classList.add('hidden');startVoiceButton.classList.remove('hidden')}document.getElementById(close.dataset.close).classList.remove('show')}});
 document.getElementById('client-search').addEventListener('input',renderClients);
 document.getElementById('export-btn').addEventListener('click',()=>{const payload={app:'Zamia 2',version:1,exportedAt:new Date().toISOString(),clients};const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='zamia2-respaldo.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)});
 document.getElementById('import-btn').addEventListener('click',()=>document.getElementById('import-file').click());
