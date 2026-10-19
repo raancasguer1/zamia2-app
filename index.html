@@ -24,6 +24,7 @@
 <main class="content">
 <section class="screen active" id="screen-home">
 <h1 class="screen-title">Inicio</h1><p class="intro">Organiza clientes y próximos pasos sin perder el hilo.</p>
+<div class="card" id="install-card"><strong>Instala Zamia 2</strong><p class="small" id="install-status">Puedes añadirla a la pantalla de inicio para abrirla como app.</p><button class="btn secondary full" id="install-btn" type="button">Instalar app</button></div>
 <button class="voice" type="button" data-action="voice">🎙 Hablar con Samia<span>El registro por voz se incorporará en la siguiente etapa</span></button>
 <div class="grid">
 <button class="action" type="button" data-action="new"><span class="ico">＋</span>Agregar cliente</button>
@@ -109,6 +110,15 @@ document.getElementById('client-search').addEventListener('input',renderClients)
 document.getElementById('export-btn').addEventListener('click',()=>{const payload={app:'Zamia 2',version:1,exportedAt:new Date().toISOString(),clients};const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='zamia2-respaldo.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)});
 document.getElementById('import-btn').addEventListener('click',()=>document.getElementById('import-file').click());
 document.getElementById('import-file').addEventListener('change',async e=>{const file=e.target.files?.[0];if(!file)return;try{const data=JSON.parse(await file.text());const incoming=Array.isArray(data)?data:data.clients;if(!Array.isArray(incoming)||incoming.some(c=>!c||typeof c.name!=='string'||typeof c.id!=='string'))throw new Error('Formato inválido');if(!confirm(`El respaldo tiene ${incoming.length} clientes. ¿Reemplazar los datos de este dispositivo? Descarga primero una copia si quieres conservarlos.`))return;clients=incoming.map(c=>({id:String(c.id),name:String(c.name).slice(0,120),phone:String(c.phone||'').slice(0,40),project:String(c.project||'').slice(0,180),status:String(c.status||'Nuevo contacto'),followUp:String(c.followUp||''),notes:String(c.notes||'').slice(0,2000),createdAt:c.createdAt||new Date().toISOString(),updatedAt:new Date().toISOString()}));if(persist()){render();alert('Respaldo restaurado en este dispositivo.')}}catch{alert('No pude leer ese respaldo de Zamia 2.')}finally{e.target.value=''}});
+let deferredInstallPrompt=null;
+const installButton=document.getElementById('install-btn');
+const installStatus=document.getElementById('install-status');
+function isStandalone(){return (window.matchMedia&&window.matchMedia('(display-mode: standalone)').matches)||navigator.standalone===true}
+function updateInstallUi(){if(isStandalone()){installButton.textContent='Ya instalada';installButton.disabled=true;installStatus.textContent='Zamia 2 ya está instalada en este dispositivo.'}else{installButton.disabled=false;installButton.textContent='Instalar app'}}
+window.addEventListener('beforeinstallprompt',event=>{event.preventDefault();deferredInstallPrompt=event;installStatus.textContent='Lista para instalar. Toca el botón para continuar.';updateInstallUi()});
+window.addEventListener('appinstalled',()=>{deferredInstallPrompt=null;installStatus.textContent='Zamia 2 quedó instalada en este dispositivo.';updateInstallUi()});
+installButton.addEventListener('click',async()=>{if(isStandalone()){updateInstallUi();return}if(!deferredInstallPrompt){installStatus.textContent='Chrome todavía no ofrece la instalación directa. Puedes usar Zamia 2 desde esta pestaña; si quieres, revisamos el navegador y el menú juntos.';return}const event=deferredInstallPrompt;deferredInstallPrompt=null;try{await event.prompt();const result=await event.userChoice;if(result.outcome==='accepted'){installStatus.textContent='Instalación aceptada. Sigue la confirmación de Android.'}else{installStatus.textContent='No se instaló; puedes seguir usando Zamia 2 en Chrome.'}}catch{installStatus.textContent='No se pudo abrir la instalación directa. Puedes seguir usando Zamia 2 en Chrome.'}updateInstallUi()});
+updateInstallUi();
 render();
 if('serviceWorker' in navigator && location.protocol.startsWith('http'))navigator.serviceWorker.register('sw.js').catch(()=>{});
 </script>
