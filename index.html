@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d2338">
+<meta name="description" content="Zamia 2: clientes, visitas y seguimientos guardados en tu dispositivo.">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<title>Zamia 2</title>
+<style>
+:root{--navy:#10283f;--teal:#087f78;--teal2:#11a39a;--amber:#efb449;--bg:#f5f7f6;--card:#fff;--muted:#657583;--line:#e3e9e8;--danger:#b74343;--shadow:0 8px 28px rgba(16,40,63,.08)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--navy);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.4}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{max-width:520px;min-height:100dvh;margin:auto;background:var(--bg);padding-bottom:92px}.topbar{position:sticky;top:0;z-index:5;background:rgba(245,247,246,.96);backdrop-filter:blur(10px);padding:16px 18px 12px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}.brand{font-size:21px;font-weight:800;letter-spacing:-.4px}.brand small{display:block;font-size:12px;color:var(--muted);font-weight:500;letter-spacing:0}.privacy-dot{font-size:11px;color:var(--teal);background:#e4f4f1;padding:7px 10px;border-radius:99px;font-weight:700}.content{padding:18px}.screen{display:none}.screen.active{display:block}.screen-title{margin:2px 0 16px;font-size:23px;letter-spacing:-.4px}.intro{margin:-9px 0 18px;color:var(--muted);font-size:14px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;margin:12px 0;box-shadow:var(--shadow)}.voice{width:100%;border:0;border-radius:20px;background:linear-gradient(135deg,var(--teal),var(--teal2));color:#fff;padding:18px 16px;font-weight:800;font-size:17px;box-shadow:0 10px 24px rgba(8,127,120,.2)}.voice span{display:block;font-size:12px;font-weight:500;opacity:.9;margin-top:3px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}.action{min-height:90px;text-align:left;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;color:var(--navy);font-weight:750;box-shadow:var(--shadow)}.action .ico{display:block;font-size:22px;margin-bottom:7px}.section-head{display:flex;justify-content:space-between;align-items:center;margin:22px 0 8px}.section-head h3{margin:0;font-size:17px}.text-button{background:none;border:0;color:var(--teal);font-weight:750;padding:8px}.empty{color:var(--muted);text-align:center;padding:22px 12px;font-size:14px}.client-card{display:flex;align-items:flex-start;gap:12px}.avatar{flex:0 0 42px;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#e2f2ef;color:var(--teal);font-weight:800}.client-main{min-width:0;flex:1}.client-name{font-weight:800;overflow-wrap:anywhere}.sub{color:var(--muted);font-size:13px;margin-top:3px;overflow-wrap:anywhere}.badge{display:inline-block;border-radius:99px;background:#eef3f2;color:#415564;font-size:11px;font-weight:750;padding:5px 9px;margin-top:8px}.badge.sent,.badge.follow{background:#e4f4f1;color:#08766f}.badge.visit{background:#fff2d9;color:#885b10}.badge.won{background:#e7f4e7;color:#31723e}.badge.lost{background:#fce9e8;color:#9c3d3d}.card-actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}.btn{border:0;border-radius:12px;padding:11px 14px;background:var(--teal);color:white;font-weight:750}.btn.secondary{background:#e9f2f1;color:var(--teal)}.btn.ghost{background:#f1f4f4;color:var(--navy)}.btn.danger{background:#fff0ef;color:var(--danger)}.btn.full{width:100%;margin-top:8px}.form label{display:block;font-size:13px;font-weight:750;margin:13px 0 6px}.form input,.form select,.form textarea,.search{width:100%;border:1px solid #d7e0df;border-radius:12px;padding:12px 13px;background:white;color:var(--navy);outline:none}.form input:focus,.form select:focus,.form textarea:focus,.search:focus{border-color:var(--teal);box-shadow:0 0 0 3px #d8f1ed}.form textarea{min-height:90px;resize:vertical}.hint{font-size:12px;color:var(--muted);margin:12px 2px}.reminder-date{font-size:12px;font-weight:800;color:var(--teal);letter-spacing:.2px}.detail-label{font-size:11px;text-transform:uppercase;letter-spacing:.7px;color:var(--muted);font-weight:800;margin-top:15px}.detail-value{font-size:15px;font-weight:650;margin-top:3px;overflow-wrap:anywhere}.privacy-card{background:#eaf5f2;border-color:#d3ebe6;color:#255e59;font-size:13px}.bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(520px,100%);padding:8px max(10px,env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom)) max(10px,env(safe-area-inset-left));display:grid;grid-template-columns:repeat(4,1fr);background:rgba(255,255,255,.97);border-top:1px solid var(--line);z-index:6;backdrop-filter:blur(10px)}.nav-btn{background:none;border:0;color:#74828c;font-size:11px;padding:5px 2px;border-radius:12px}.nav-btn b{display:block;font-size:19px;line-height:1.2;margin-bottom:2px}.nav-btn.active{color:var(--teal);font-weight:800}.modal-backdrop{position:fixed;inset:0;background:rgba(12,28,42,.42);z-index:10;display:none;align-items:flex-end;justify-content:center}.modal-backdrop.show{display:flex}.modal{width:min(520px,100%);background:#fff;border-radius:22px 22px 0 0;padding:22px 20px calc(22px + env(safe-area-inset-bottom));box-shadow:0 -12px 40px rgba(0,0,0,.16)}.modal h2{margin:0 0 8px}.modal p{color:var(--muted)}.modal .close{float:right;border:0;border-radius:50%;width:36px;height:36px;background:#f1f4f4;font-size:18px}.small{font-size:12px;color:var(--muted)}.hidden{display:none!important}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="topbar"><div class="brand">Zamia 2<small>Tu asistente de clientes y trabajos</small></div><span class="privacy-dot">● Solo en este dispositivo</span></header>
+<main class="content">
+<section class="screen active" id="screen-home">
+<h1 class="screen-title">Inicio</h1><p class="intro">Organiza clientes y próximos pasos sin perder el hilo.</p>
+<button class="voice" type="button" data-action="voice">🎙 Hablar con Samia<span>El registro por voz se incorporará en la siguiente etapa</span></button>
+<div class="grid">
+<button class="action" type="button" data-action="new"><span class="ico">＋</span>Agregar cliente</button>
+<button class="action" type="button" data-screen="clients"><span class="ico">👥</span>Ver clientes</button>
+<button class="action" type="button" data-screen="agenda"><span class="ico">📅</span>Registrar visita</button>
+<button class="action" type="button" data-screen="agenda"><span class="ico">✓</span>Ver pendientes</button>
+</div>
+<div class="section-head"><h3>Próximos seguimientos</h3><button class="text-button" data-screen="agenda">Ver agenda</button></div>
+<div id="home-followups"></div>
+<div class="card privacy-card">Tus nombres, teléfonos y notas quedan guardados en este dispositivo. No se suben a la nube.</div>
+</section>
+<section class="screen" id="screen-clients">
+<h1 class="screen-title">Clientes</h1><p class="intro">Tus contactos y trabajos, guardados aquí.</p>
+<input class="search" id="client-search" type="search" placeholder="Buscar cliente u obra" aria-label="Buscar cliente u obra">
+<div class="section-head"><h3 id="clients-count">0 clientes</h3><button class="text-button" data-action="new">＋ Agregar</button></div>
+<div id="client-list"></div>
+</section>
+<section class="screen" id="screen-agenda">
+<h1 class="screen-title">Agenda</h1><p class="intro">Seguimientos y visitas por fecha.</p>
+<button class="btn full" data-action="new">＋ Agregar cliente y seguimiento</button>
+<div class="section-head"><h3>Próximos</h3></div>
+<div id="agenda-list"></div>
+</section>
+<section class="screen" id="screen-form">
+<h1 class="screen-title" id="form-title">Agregar cliente</h1><p class="intro">Guarda sus datos y define el siguiente paso.</p>
+<form class="form card" id="client-form">
+<label for="name">Nombre del cliente *</label><input id="name" name="name" maxlength="120" required placeholder="Nombre o empresa" autocomplete="name">
+<label for="phone">Celular</label><input id="phone" name="phone" type="tel" maxlength="40" placeholder="Número de contacto" autocomplete="tel">
+<label for="project">Obra o servicio</label><input id="project" name="project" maxlength="180" placeholder="Ej. Remodelación de baño">
+<label for="status">Estado</label><select id="status" name="status"><option>Nuevo contacto</option><option>Visita pendiente</option><option>Cotización enviada</option><option>En seguimiento</option><option>Ganado</option><option>No concretado</option></select>
+<label for="followUp">Próximo seguimiento</label><input id="followUp" name="followUp" type="date">
+<label for="notes">Nota</label><textarea id="notes" name="notes" maxlength="2000" placeholder="Detalle importante (opcional)"></textarea>
+<button class="btn full" type="submit">Guardar cliente</button>
+<button class="btn ghost full" type="button" data-screen="clients">Cancelar</button>
+</form><p class="hint">Puedes cambiar o borrar estos datos desde la ficha del cliente. Recuerda exportar una copia de seguridad si cambias de teléfono.</p>
+</section>
+<section class="screen" id="screen-detail">
+<button class="text-button" data-screen="clients">← Volver a clientes</button>
+<h1 class="screen-title" id="detail-name">Cliente</h1><p class="intro" id="detail-project">Obra o servicio</p>
+<div class="card" id="detail-card"></div>
+<div class="card-actions"><a id="call-link" class="btn" href="#">📞 Llamar</a><button class="btn secondary" id="detail-edit">Editar</button></div>
+<button class="btn ghost full" id="detail-agenda">Ver en agenda</button>
+<button class="btn danger full" id="detail-delete">Eliminar cliente</button>
+</section>
+<section class="screen" id="screen-more">
+<h1 class="screen-title">Más</h1><p class="intro">Privacidad y respaldo de tus datos.</p>
+<div class="card privacy-card"><strong>Almacenamiento local</strong><br>La información se guarda en el navegador de este dispositivo. No se envía a ROCAS ni a un servidor.</div>
+<div class="card"><h3>Respaldo</h3><p class="small">Descarga una copia de tus clientes para conservarla o pasarla a otro teléfono.</p><button class="btn full" id="export-btn">Descargar respaldo</button><button class="btn secondary full" id="import-btn">Restaurar respaldo</button><input type="file" id="import-file" accept="application/json,.json" class="hidden"></div>
+<div class="card"><h3>Sobre Zamia 2</h3><p class="small">Primera versión funcional: clientes, estados y seguimientos locales. Dictado por voz, notificaciones y atención de llamadas requieren una etapa posterior de pruebas.</p></div>
+</section>
+</main>
+<nav class="bottom-nav" aria-label="Navegación principal">
+<button class="nav-btn active" data-screen="home"><b>⌂</b>Inicio</button><button class="nav-btn" data-screen="clients"><b>♙</b>Clientes</button><button class="nav-btn" data-screen="agenda"><b>▦</b>Agenda</button><button class="nav-btn" data-screen="more"><b>⋯</b>Más</button>
+</nav>
+</div>
+<div class="modal-backdrop" id="voice-modal" role="dialog" aria-modal="true" aria-labelledby="voice-title"><div class="modal"><button class="close" data-close="voice-modal" aria-label="Cerrar">×</button><h2 id="voice-title">Asistente de voz</h2><p>El registro por voz será la siguiente etapa. Por ahora puedes guardar clientes con el formulario. La app no escucha ni graba audio.</p><button class="btn full" data-action="new">Agregar cliente</button></div></div>
+<script>
+'use strict';
+const KEY='zamia2.clients.v1';let clients=loadClients();let editingId=null;let selectedId=null;let activeScreen='home';
+function loadClients(){try{const v=JSON.parse(localStorage.getItem(KEY)||'[]');return Array.isArray(v)?v.filter(x=>x&&typeof x==='object'&&x.id&&x.name):[]}catch{return[]}}
+function persist(){try{localStorage.setItem(KEY,JSON.stringify(clients));return true}catch{alert('No se pudo guardar en este dispositivo. Libera espacio o descarga un respaldo.');return false}}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function dateObj(s){if(!s)return null;const [y,m,d]=s.split('-').map(Number);return new Date(y,m-1,d)}
+function fmtDate(s){const d=dateObj(s);return d?new Intl.DateTimeFormat('es-CO',{day:'numeric',month:'short',year:'numeric'}).format(d):'Fecha por definir'}
+function dateLabel(s){if(!s)return'Fecha por definir';const d=dateObj(s),today=new Date();today.setHours(0,0,0,0);const tom=new Date(today);tom.setDate(tom.getDate()+1);if(d.getTime()===today.getTime())return'Hoy';if(d.getTime()===tom.getTime())return'Mañana';if(d<today)return'Vencido · '+fmtDate(s);return fmtDate(s)}
+function badgeClass(status){return status==='Cotización enviada'?'sent':status==='Visita pendiente'?'visit':status==='En seguimiento'?'follow':status==='Ganado'?'won':status==='No concretado'?'lost':''}
+function initials(name){return String(name||'?').trim().split(/\s+/).slice(0,2).map(x=>x[0]||'').join('').toUpperCase()||'?'}
+function sortedFollowups(){return clients.filter(c=>c.followUp).sort((a,b)=>a.followUp.localeCompare(b.followUp))}
+function renderClientCard(c,extraActions=false){return `<article class="card client-card"><div class="avatar">${esc(initials(c.name))}</div><div class="client-main"><button class="text-button client-name" data-detail="${esc(c.id)}">${esc(c.name)}</button><div class="sub">${esc(c.project||'Sin obra o servicio')}</div><span class="badge ${badgeClass(c.status)}">${esc(c.status||'Nuevo contacto')}</span>${c.followUp?`<div class="sub">Próximo seguimiento: <strong>${esc(dateLabel(c.followUp))}</strong></div>`:''}${extraActions?`<div class="card-actions"><button class="btn secondary" data-detail="${esc(c.id)}">Ver ficha</button>${c.phone?`<button class="btn ghost" data-call="${esc(c.id)}">Llamar</button>`:''}</div>`:''}</div></article>`}
+function render(){renderHome();renderClients();renderAgenda();if(activeScreen==='detail'&&selectedId)renderDetail()}
+function renderHome(){const target=document.getElementById('home-followups'),items=sortedFollowups().slice(0,3);target.innerHTML=items.length?items.map(c=>renderClientCard(c,true)).join(''):'<div class="card empty">Todavía no tienes seguimientos.<br>Agrega un cliente y define una fecha para verlo aquí.</div>'}
+function renderClients(){const q=(document.getElementById('client-search')?.value||'').trim().toLocaleLowerCase('es');const list=clients.filter(c=>`${c.name} ${c.project} ${c.status}`.toLocaleLowerCase('es').includes(q)).sort((a,b)=>a.name.localeCompare(b.name,'es'));document.getElementById('clients-count').textContent=`${clients.length} ${clients.length===1?'cliente':'clientes'}`;document.getElementById('client-list').innerHTML=list.length?list.map(c=>renderClientCard(c,true)).join(''):'<div class="card empty">No hay clientes guardados todavía.<br>Usa “Agregar” para registrar el primero.</div>'}
+function renderAgenda(){const items=sortedFollowups();document.getElementById('agenda-list').innerHTML=items.length?items.map(c=>`<article class="card client-card"><div class="avatar">▦</div><div class="client-main"><div class="reminder-date">${esc(dateLabel(c.followUp))}</div><button class="text-button client-name" data-detail="${esc(c.id)}">${esc(c.status==='Visita pendiente'?'Visita de obra':'Seguimiento')}</button><div class="sub">${esc(c.name)}${c.project?' · '+esc(c.project):''}</div>${c.phone?`<div class="card-actions"><button class="btn secondary" data-detail="${esc(c.id)}">Ver ficha</button><button class="btn ghost" data-call="${esc(c.id)}">Llamar</button></div>`:`<div class="card-actions"><button class="btn secondary" data-detail="${esc(c.id)}">Ver ficha</button></div>`}</div></article>`).join(''):'<div class="card empty">No hay seguimientos con fecha.<br>Agrega un cliente y elige cuándo retomarlo.</div>'}
+function showScreen(name){document.querySelectorAll('.screen').forEach(x=>x.classList.toggle('active',x.id==='screen-'+name));document.querySelectorAll('.nav-btn').forEach(x=>x.classList.toggle('active',x.dataset.screen===name));activeScreen=name;window.scrollTo({top:0,behavior:'smooth'});render()}
+function newClient(){editingId=null;document.getElementById('client-form').reset();document.getElementById('form-title').textContent='Agregar cliente';showScreen('form')}
+function editClient(id){const c=clients.find(x=>x.id===id);if(!c)return;editingId=id;const f=document.getElementById('client-form');for(const k of ['name','phone','project','status','followUp','notes'])f.elements[k].value=c[k]||'';document.getElementById('form-title').textContent='Editar cliente';showScreen('form')}
+function openDetail(id){selectedId=id;showScreen('detail')}
+function renderDetail(){const c=clients.find(x=>x.id===selectedId);if(!c){showScreen('clients');return}document.getElementById('detail-name').textContent=c.name;document.getElementById('detail-project').textContent=c.project||'Sin obra o servicio';document.getElementById('detail-card').innerHTML=`<span class="badge ${badgeClass(c.status)}">${esc(c.status||'Nuevo contacto')}</span><div class="detail-label">Celular</div><div class="detail-value">${esc(c.phone||'No registrado')}</div><div class="detail-label">Obra o servicio</div><div class="detail-value">${esc(c.project||'No registrado')}</div><div class="detail-label">Próxima acción</div><div class="detail-value">${esc(c.status==='Visita pendiente'?'Visita de obra':'Seguimiento')}</div><div class="detail-label">Fecha</div><div class="detail-value">${esc(fmtDate(c.followUp))}</div><div class="detail-label">Nota</div><div class="detail-value">${esc(c.notes||'Sin notas')}</div>`;const call=document.getElementById('call-link');if(c.phone){call.classList.remove('hidden');call.onclick=e=>{e.preventDefault();if(confirm(`¿Abrir el teléfono para llamar a ${c.name}?`))location.href='tel:'+encodeURIComponent(c.phone)}}else{call.classList.add('hidden');call.onclick=null}document.getElementById('detail-edit').onclick=()=>editClient(c.id);document.getElementById('detail-delete').onclick=()=>deleteClient(c.id);document.getElementById('detail-agenda').onclick=()=>showScreen('agenda')}
+function deleteClient(id){const c=clients.find(x=>x.id===id);if(!c||!confirm(`¿Eliminar a ${c.name} de este dispositivo? Esta acción no se puede deshacer.`))return;clients=clients.filter(x=>x.id!==id);persist();selectedId=null;showScreen('clients')}
+document.getElementById('client-form').addEventListener('submit',e=>{e.preventDefault();const f=e.currentTarget;const data={name:f.elements.name.value.trim(),phone:f.elements.phone.value.trim(),project:f.elements.project.value.trim(),status:f.elements.status.value,followUp:f.elements.followUp.value,notes:f.elements.notes.value.trim()};if(!data.name){alert('Escribe el nombre del cliente.');return}if(editingId){const i=clients.findIndex(c=>c.id===editingId);if(i>=0)clients[i]={...clients[i],...data,updatedAt:new Date().toISOString()}}else{const id=(crypto.randomUUID?crypto.randomUUID():String(Date.now())+'-'+Math.random().toString(36).slice(2));clients.unshift({id,...data,createdAt:new Date().toISOString(),updatedAt:new Date().toISOString()})}if(!persist())return;f.reset();editingId=null;showScreen('clients');alert('Cliente guardado en este dispositivo.')});
+document.addEventListener('click',e=>{const s=e.target.closest('[data-screen]');if(s){showScreen(s.dataset.screen);return}const a=e.target.closest('[data-action]');if(a){if(a.dataset.action==='new')newClient();if(a.dataset.action==='voice')document.getElementById('voice-modal').classList.add('show');return}const d=e.target.closest('[data-detail]');if(d){openDetail(d.dataset.detail);return}const call=e.target.closest('[data-call]');if(call){const c=clients.find(x=>x.id===call.dataset.call);if(c?.phone&&confirm(`¿Abrir el teléfono para llamar a ${c.name}?`))location.href='tel:'+encodeURIComponent(c.phone);return}const close=e.target.closest('[data-close]');if(close)document.getElementById(close.dataset.close).classList.remove('show')});
+document.getElementById('client-search').addEventListener('input',renderClients);
+document.getElementById('export-btn').addEventListener('click',()=>{const payload={app:'Zamia 2',version:1,exportedAt:new Date().toISOString(),clients};const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='zamia2-respaldo.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)});
+document.getElementById('import-btn').addEventListener('click',()=>document.getElementById('import-file').click());
+document.getElementById('import-file').addEventListener('change',async e=>{const file=e.target.files?.[0];if(!file)return;try{const data=JSON.parse(await file.text());const incoming=Array.isArray(data)?data:data.clients;if(!Array.isArray(incoming)||incoming.some(c=>!c||typeof c.name!=='string'||typeof c.id!=='string'))throw new Error('Formato inválido');if(!confirm(`El respaldo tiene ${incoming.length} clientes. ¿Reemplazar los datos de este dispositivo? Descarga primero una copia si quieres conservarlos.`))return;clients=incoming.map(c=>({id:String(c.id),name:String(c.name).slice(0,120),phone:String(c.phone||'').slice(0,40),project:String(c.project||'').slice(0,180),status:String(c.status||'Nuevo contacto'),followUp:String(c.followUp||''),notes:String(c.notes||'').slice(0,2000),createdAt:c.createdAt||new Date().toISOString(),updatedAt:new Date().toISOString()}));if(persist()){render();alert('Respaldo restaurado en este dispositivo.')}}catch{alert('No pude leer ese respaldo de Zamia 2.')}finally{e.target.value=''}});
+render();
+if('serviceWorker' in navigator && location.protocol.startsWith('http'))navigator.serviceWorker.register('sw.js').catch(()=>{});
+</script>
+</body>
+</html>
